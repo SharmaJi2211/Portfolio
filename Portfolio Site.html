@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dhruv Sharma | Game Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #0e0e0e url('https://www.transparenttextures.com/patterns/stardust.png');
+      color: #f0f0f0;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: linear-gradient(135deg, #1f1f1f, #3a3a3a);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.3rem;
+      opacity: 0.95;
+    }
+    .section {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+    .section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      border-bottom: 3px solid #00b4d8;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+    .project {
+      margin: 4rem auto;
+      background: #1c1c1c;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+      max-width: 900px;
+    }
+    .project h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+    .screenshot-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem 0 1.5rem;
+    }
+    .screenshot-gallery img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .project ul {
+      text-align: left;
+      display: inline-block;
+      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .project ul li {
+      margin-bottom: 0.5rem;
+    }
+    .project .btn-wrapper {
+      margin-top: 1.5rem;
+    }
+    .btn {
+      display: inline-block;
+      background: #00b4d8;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #0094ad;
+    }
+    .about-skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      background-color: #1c1c1c;
+      padding: 2rem;
+      border-radius: 16px;
+      margin-top: 4rem;
+      gap: 2rem;
+    }
+    .about, .skills {
+      flex: 1 1 45%;
+      text-align: left;
+    }
+    .skills ul {
+      list-style: none;
+      padding: 0;
+    }
+    .skills li {
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      font-size: 0.95rem;
+      color: #aaa;
+      border-top: 1px solid #333;
+    }
+    footer a {
+      color: #00b4d8;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Dhruv Sharma</h1>
+    <p>Game Developer | Unity | C# | Blender</p>
+  </header>
+
+  <section class="section">
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Dungeon Hunter (2D Action Platformer)</h3>
+      <div class="screenshot-gallery">
+        <img src="DUNGEON_HUNTER_0.png" alt="Dungeon Hunter Screenshot 1">
+        <img src="DUNGEON_HUNTER_1.png" alt="Dungeon Hunter Screenshot 2">
+        <img src="DUNGEON_HUNTER_2.png" alt="Dungeon Hunter Screenshot 3">
+      </div>
+      <p>A classic pixel-style platformer built from scratch where you dodge traps, collect coins, and navigate vertical and horizontal level design using ladders and mushrooms. My first complete 2D game made with Unity Tilemap.</p>
+      <ul>
+        <li>Implemented enemy patrol AI and respawn system</li>
+        <li>Integrated trap hazards and collectibles</li>
+        <li>Designed tile-based levels using Unity's built-in Tilemap editor</li>
+        <li>Handled level transitions and respawn logic with scene management</li>
+        <li>Added physic materials for better collision and movement behavior</li>
+      </ul>
+      <div class="btn-wrapper">
+        <a class="btn" href="https://sharmaji2211.itch.io/dungeon-hunter" target="_blank">Play on itch.io</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>Space Ranger (Top-Down Shooter)</h3>
+      <div class="screenshot-gallery">
+        <img src="SPACE_RANGER_0.png" alt="Space Ranger Screenshot 1">
+        <img src="SPACE_RANGER_1.png" alt="Space Ranger Screenshot 2">
+        <img src="SPACE_RANGER_2.png" alt="Space Ranger Screenshot 2">
+        <img src="SPACE_RANGER_3.png" alt="Space Ranger Screenshot 2">
+      </div>
+      <p>An infinite-wave top-down shooter where the player controls a jet and survives against different enemy types. Built with modular enemy spawns and score systems to sharpen gameplay pacing and feedback.</p>
+      <ul>
+        <li>Enemy spawns handled via ScriptableObjects and coroutines</li>
+        <li>Integrated screen shake, explosion particles, and wave tracking</li>
+        <li>Used particle systems for projectile impact and destruction FX</li>
+        <li>Developed dynamic UI feedback including live score display</li>
+        <li>Added a health bar system and end-game screen with restart option</li>
+      </ul>
+      <div class="btn-wrapper">
+        <a class="btn" href="https://sharmaji2211.itch.io/space-ranger" target="_blank">Play on itch.io</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <h3>ExoKill (3D FPS Shooter)</h3>
+      <div class="screenshot-gallery">
+        <img src="EXOKILL_1.png" alt="ExoKill Screenshot">
+        <img src="EXOKILL_2.png" alt="ExoKill Screenshot">
+        <img src="EXOKILL_3.png" alt="ExoKill Screenshot">
+        <img src="EXOKILL_4.png" alt="ExoKill Screenshot">
+      </div>
+      <p>A 3D first-person shooter set in a futuristic map where you eliminate AI turrets and patrolling enemies. Features three distinct weapons with unique mechanics, and is built using ProBuilder and Unity's Post Processing stack.</p>
+      <ul>
+        <li>Created gun switching and reload mechanics for pistol, machine gun, and sniper</li>
+        <li>Designed enemy and turret AI to detect and shoot player with cooldown</li>
+        <li>Added player health system, ammo pickup logic, and damage effects</li>
+        <li>Used ProBuilder to design low-poly environment layout</li>
+        <li>Used Unity Character Controller for smooth first-person movement</li>
+        <li>Integrated First-Person Input System and Cinemachine for camera control</li>
+        <li>Implemented enemy pathfinding with NavMeshAgent</li>
+      </ul>
+      <div class="btn-wrapper">
+        <a class="btn" href="https://sharmaji2211.itch.io/fps-shooter" target="_blank">Play on itch.io</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about-skills">
+    <div class="about">
+      <h2>About Me</h2>
+      <p>I’m a passionate game developer focused on creating immersive gameplay experiences with Unity. From scripting core mechanics to polishing visual effects and balancing UI, I enjoy the full cycle of game creation. All my projects so far have been solo builds where I implemented every system from the ground up. I’ve also started integrating Blender to design low-poly assets for future projects.</p>
+    </div>
+    <div class="skills">
+      <h2>Skills & Tools</h2>
+      <ul>
+        <li>Unity (2D & 3D), C# Scripting</li>
+        <li>Tilemap Editor & ProBuilder</li>
+        <li>Coroutines, ScriptableObjects, SceneManager</li>
+        <li>Particle Systems, Camera Shake, Post Processing</li>
+        <li>Basic AI, Enemy Patrol, Shooting Logic</li>
+        <li>Player Stats, Health, Ammo, Pickup Systems</li>
+        <li>Blender (Low-Poly Assets, Terrain & Environment)</li>
+        <li>Version Control with Git</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>📧 sharmadhruv1244@gmail.com | ☎️ 7310929809<br>
+    <a href="https://www.linkedin.com/in/dhruv-sharma-2010b0183" target="_blank">LinkedIn</a> |
+    <a href="https://sharmaji2211.itch.io" target="_blank">itch.io</a></p>
+  </footer>
+</body>
+</html>
