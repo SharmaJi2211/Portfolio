@@ -9,6 +9,9 @@
     * {
       box-sizing: border-box;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -16,16 +19,12 @@
       color: #f0f0f0;
     }
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
       background: linear-gradient(135deg, #1f1f1f, #3a3a3a);
       color: white;
       padding: 2rem 1rem;
       text-align: center;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
     }
-
     header h1 {
       font-size: 3.2rem;
       margin-bottom: 0.5rem;
@@ -34,6 +33,41 @@
       font-size: 1.3rem;
       opacity: 0.95;
     }
+nav {
+  position: sticky;
+  top: 0;
+  background-color: #121212;
+  display: flex;
+  justify-content: center;     
+  align-items: center;       
+  height: 60px;          
+  gap: 2rem;
+  padding: 0 1rem;
+  z-index: 1000;
+  border-bottom: 1px solid #333;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: #00ffe7;
+}
+nav .btn {
+  background-color: #00ffe7;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+nav .btn:hover {
+  background-color: #00cdbd;
+}
+
     .section {
       max-width: 1100px;
       margin: 4rem auto;
@@ -97,27 +131,32 @@
     .btn:hover {
       background: #0094ad;
     }
-    .about-skills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+
+    .about-text {
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+      text-align: left;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
       background-color: #1c1c1c;
       padding: 2rem;
       border-radius: 16px;
-      margin-top: 4rem;
-      gap: 2rem;
+      max-width: 900px;
+      margin: 2rem auto 0;
+      font-size: 1rem;
     }
-    .about, .skills {
-      flex: 1 1 45%;
-      text-align: left;
+    .skills-grid div {
+      background-color: #2a2a2a;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
-    .skills ul {
-      list-style: none;
-      padding: 0;
-    }
-    .skills li {
-      margin-bottom: 0.5rem;
-    }
+
     footer {
       background: #111;
       text-align: center;
@@ -137,14 +176,23 @@
   </style>
 </head>
 <body>
+
   <header>
     <h1>Dhruv Sharma</h1>
     <p>Game Developer | Unity | C# | Blender</p>
   </header>
 
-  <section class="section">
+  <nav>
+    <a href="#projects">Projects</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="Dhruv_Sharma_Resume.pdf" class="btn" download>Download Resume</a>
+  </nav>
+
+  <section class="section" id="projects">
     <h2>Projects</h2>
 
+    <!-- Dungeon Hunter -->
     <div class="project">
       <h3>Dungeon Hunter (2D Action Platformer)</h3>
       <div class="screenshot-gallery">
@@ -152,40 +200,39 @@
         <img src="DUNGEON_HUNTER_1.png" alt="Dungeon Hunter Screenshot 2">
         <img src="DUNGEON_HUNTER_2.png" alt="Dungeon Hunter Screenshot 3">
       </div>
-      <p>A classic pixel-style platformer built from scratch where you dodge traps, collect coins, and navigate vertical and horizontal level design using ladders and mushrooms. My first complete 2D game made with Unity Tilemap.</p>
+      <p>A classic pixel-style platformer built from scratch where you dodge traps, collect coins, and navigate vertical and horizontal level design using ladders and mushrooms.</p>
       <ul>
-        <li>Implemented enemy patrol AI and respawn system</li>
-        <li>Integrated trap hazards and collectibles</li>
-        <li>Designed tile-based levels using Unity's built-in Tilemap editor</li>
-        <li>Handled level transitions and respawn logic with scene management</li>
-        <li>Added physic materials for better collision and movement behavior</li>
+        <li>Enemy patrol AI and respawn system</li>
+        <li>Trap hazards, collectibles, tilemap design</li>
+        <li>Scene transitions and respawn logic</li>
+        <li>Physic materials for better movement</li>
       </ul>
       <div class="btn-wrapper">
         <a class="btn" href="https://sharmaji2211.itch.io/dungeon-hunter" target="_blank">Play on itch.io</a>
       </div>
     </div>
 
+    <!-- Space Ranger -->
     <div class="project">
       <h3>Space Ranger (Top-Down Shooter)</h3>
       <div class="screenshot-gallery">
         <img src="SPACE_RANGER_0.png" alt="Space Ranger Screenshot 1">
         <img src="SPACE_RANGER_1.png" alt="Space Ranger Screenshot 2">
-        <img src="SPACE_RANGER_2.png" alt="Space Ranger Screenshot 2">
-        <img src="SPACE_RANGER_3.png" alt="Space Ranger Screenshot 2">
+        <img src="SPACE_RANGER_2.png" alt="Space Ranger Screenshot 3">
+        <img src="SPACE_RANGER_3.png" alt="Space Ranger Screenshot 4">
       </div>
-      <p>An infinite-wave top-down shooter where the player controls a jet and survives against different enemy types. Built with modular enemy spawns and score systems to sharpen gameplay pacing and feedback.</p>
+      <p>An infinite-wave top-down shooter where the player controls a jet and survives against different enemy types.</p>
       <ul>
-        <li>Enemy spawns handled via ScriptableObjects and coroutines</li>
-        <li>Integrated screen shake, explosion particles, and wave tracking</li>
-        <li>Used particle systems for projectile impact and destruction FX</li>
-        <li>Developed dynamic UI feedback including live score display</li>
-        <li>Added a health bar system and end-game screen with restart option</li>
+        <li>ScriptableObjects + coroutines for spawning</li>
+        <li>Screen shake, explosion FX, wave system</li>
+        <li>Live score UI, health system, game over screen</li>
       </ul>
       <div class="btn-wrapper">
         <a class="btn" href="https://sharmaji2211.itch.io/space-ranger" target="_blank">Play on itch.io</a>
       </div>
     </div>
 
+    <!-- ExoKill -->
     <div class="project">
       <h3>ExoKill (3D FPS Shooter)</h3>
       <div class="screenshot-gallery">
@@ -194,15 +241,12 @@
         <img src="EXOKILL_3.png" alt="ExoKill Screenshot">
         <img src="EXOKILL_4.png" alt="ExoKill Screenshot">
       </div>
-      <p>A 3D first-person shooter set in a futuristic map where you eliminate AI turrets and patrolling enemies. Features three distinct weapons with unique mechanics, and is built using ProBuilder and Unity's Post Processing stack.</p>
+      <p>A 3D FPS game with AI turrets and patrolling enemies, featuring 3 weapons and low-poly map design.</p>
       <ul>
-        <li>Created gun switching and reload mechanics for pistol, machine gun, and sniper</li>
-        <li>Designed enemy and turret AI to detect and shoot player with cooldown</li>
-        <li>Added player health system, ammo pickup logic, and damage effects</li>
-        <li>Used ProBuilder to design low-poly environment layout</li>
-        <li>Used Unity Character Controller for smooth first-person movement</li>
-        <li>Integrated First-Person Input System and Cinemachine for camera control</li>
-        <li>Implemented enemy pathfinding with NavMeshAgent</li>
+        <li>Gun switching, reloading, unique damage stats</li>
+        <li>Enemy + turret AI with detection logic</li>
+        <li>Health system, pickups, post-processing</li>
+        <li>NavMeshAgent, Cinemachine, ProBuilder</li>
       </ul>
       <div class="btn-wrapper">
         <a class="btn" href="https://sharmaji2211.itch.io/fps-shooter" target="_blank">Play on itch.io</a>
@@ -210,23 +254,31 @@
     </div>
   </section>
 
-  <section class="section about-skills">
-    <div class="about">
-      <h2>About Me</h2>
-      <p>I’m a passionate game developer focused on creating immersive gameplay experiences with Unity. From scripting core mechanics to polishing visual effects and balancing UI, I enjoy the full cycle of game creation. All my projects so far have been solo builds where I implemented every system from the ground up. I’ve also started integrating Blender to design low-poly assets for future projects.</p>
-    </div>
-    <div class="skills">
-      <h2>Skills & Tools</h2>
-      <ul>
-        <li>Unity (2D & 3D), C# Scripting</li>
-        <li>Tilemap Editor & ProBuilder</li>
-        <li>Coroutines, ScriptableObjects, SceneManager</li>
-        <li>Particle Systems, Camera Shake, Post Processing</li>
-        <li>Basic AI, Enemy Patrol, Shooting Logic</li>
-        <li>Player Stats, Health, Ammo, Pickup Systems</li>
-        <li>Blender (Low-Poly Assets, Terrain & Environment)</li>
-        <li>Version Control with Git</li>
-      </ul>
+  <section class="section" id="about">
+  <h2>About Me</h2>
+  <div class="about-text">
+    <p>
+      My name is Dhruv Sharma, a passionate game developer focused on building fun and functional gameplay experiences using Unity and C#. With a strong foundation in both 2D and 3D game mechanics, I enjoy working on projects that combine polished visuals, smooth controls, and meaningful player feedback.
+      <br><br>
+      Currently pursuing MCA, I continue to sharpen my skills through self-driven projects and formal education. My recent experience includes incorporating Blender into my workflow for designing low-poly assets and terrains, allowing me to bring more originality to my games.
+      <br><br>
+      Always eager to learn and grow, I’m looking forward to joining a collaborative team where I can contribute to compelling game development projects and expand my capabilities.
+    </p>
+  </div>
+</section>
+
+  <section class="section" id="skills">
+    <h2>Skills & Tools</h2>
+    <div class="skills-grid">
+      <div>Unity (2D & 3D)</div>
+      <div>C# Scripting</div>
+      <div>Coroutines & ScriptableObjects</div>
+      <div>Post Processing & Camera Effects</div>
+      <div>AI: Patrol, Turrets, Pathfinding</div>
+      <div>Tilemap & ProBuilder</div>
+      <div>Player Stats, Health, Ammo Systems</div>
+      <div>Git & GitHub</div>
+      <div>Scene Management & UI Feedback</div>
     </div>
   </section>
 
